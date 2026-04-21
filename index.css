@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background-color: #f4f8fb; /* very soft light airy blue */
+  color: #2d3748;
+  line-height: 1.6;
+}
+
+/* Utils */
+.text-muted { color: #718096; font-weight: 500; }
+.text-sm { font-size: 0.875rem; }
+.mb-1 { margin-bottom: 0.75rem; }
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.flex-gap { display: flex; gap: 1rem; flex-wrap: wrap; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+@media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
+
+/* Layout */
+.app-container { min-height: 100vh; display: flex; flex-direction: column; }
+
+.dashboard-layout {
+  max-width: 1200px;
+  width: 100%;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+  flex: 1;
+}
+
+/* Cards */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: 0 10px 30px rgba(0, 75, 120, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 15px 35px rgba(0, 75, 120, 0.07);
+}
+
+h3 {
+  color: #1a365d;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Forms & Inputs */
+.form { display: flex; flex-direction: column; gap: 1.25rem; }
+.flex-form { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+
+input, textarea, select {
+  padding: 0.85rem 1.2rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background-color: #f7fafc;
+  font-size: 0.95rem;
+  color: #2d3748;
+  font-weight: 500;
+  flex: 1;
+  transition: all 0.2s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #14b8a6; /* Teal */
+  background-color: white;
+  box-shadow: 0 0 0 4px rgba(20, 184, 166, 0.15);
+}
+
+/* Buttons */
+button { font-family: inherit; cursor: pointer; border: none; border-radius: 12px; font-weight: 600; font-size: 1rem; transition: all 0.2s; }
+.btn-solid { 
+  background: linear-gradient(135deg, #0ea5e9, #14b8a6); 
+  color: white; 
+  padding: 0.85rem 1.75rem; 
+  box-shadow: 0 4px 15px rgba(20, 184, 166, 0.3);
+}
+.btn-solid:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(20, 184, 166, 0.4); }
+
+.btn-solid-small { background: linear-gradient(135deg, #0ea5e9, #14b8a6); color: white; padding: 0.5rem 1.25rem; font-size: 0.9rem; box-shadow: 0 4px 10px rgba(20, 184, 166, 0.2); }
+.btn-solid-small:hover { transform: translateY(-2px); }
+
+.btn-outline-small { background: white; color: #0ea5e9; border: 2px solid #e0f2fe; padding: 0.45rem 1.2rem; font-size: 0.9rem; }
+.btn-outline-small:hover { border-color: #0ea5e9; background-color: #f0f9ff; }
+
+/* Badges */
+.badge { padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+.badge-pending { background: #fef3c7; color: #d97706; }
+.badge-confirmed { background: #e0f2fe; color: #0369a1; }
+.badge-completed { background: #d1fae5; color: #059669; }
+.badge-paid { background: #d1fae5; color: #059669; }
+
+/* Lists & Grid */
+.list-group { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+.list-item { 
+  display: flex; justify-content: space-between; align-items: center; 
+  padding: 1.25rem; border-radius: 12px; background: #f8fafc; 
+  border: 1px solid #edf2f7; transition: 0.2s;
+}
+.list-item:hover { background: white; border-color: #cbd5e1; box-shadow: 0 4px 12px rgba(0,0,0,0.02); }
+
+.record-card { 
+  border-top: 4px solid #14b8a6; 
+  padding: 1.5rem; 
+  background: white; 
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+/* Top Navbar */
+.navbar-top { 
+  background: rgba(255, 255, 255, 0.85); 
+  backdrop-filter: blur(12px);
+  color: #1a365d; 
+  padding: 1rem 0; 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  position: sticky; top: 0; z-index: 100;
+}
+.nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+.nav-brand { font-size: 1.6rem; font-weight: 800; display: flex; align-items: center; gap: 0.5rem; color: #0ea5e9; }
+.role-chip { font-size: 0.75rem; background: #e0f2fe; color: #0369a1; padding: 0.3rem 0.6rem; border-radius: 6px; text-transform: uppercase; font-weight: 700; margin-left: 0.75rem; }
+
+/* Auth Wrapper */
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(circle at top right, #e0f2fe, #f4f8fb);
+}
+
+.auth-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  padding: 3.5rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(14, 165, 233, 0.1);
+  width: 100%;
+  max-width: 480px;
+  border: 1px solid rgba(255,255,255,0.4);
+}
+.brand-logo { color: #0ea5e9; font-size: 2.2rem; font-weight: 800; text-align: center; }
+.auth-card h2 { text-align: center; margin-bottom: 0.5rem; font-size: 1.3rem; font-weight: 600; color: #1a365d; }
+.auth-form { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.25rem; }
+.toggle-auth { margin-top: 2rem; text-align: center; font-weight: 500; color: #718096; }
+.toggle-auth span { color: #14b8a6; font-weight: 800; cursor: pointer; transition: 0.2s; margin-left: 4px; }
+.toggle-auth span:hover { color: #0ea5e9; }
+.alert-error { background: #fef2f2; color: #e11d48; padding: 1rem 1.25rem; border-radius: 12px; margin-top: 1.25rem; font-weight: 600; text-align: center; border: 1px solid #fecdd3; }
+
+/* Modal */
+.modal-overlay {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(5px);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 50;
+}
+.modal { width: 100%; max-width: 550px; animation: modalPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+
+@keyframes modalPop {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
