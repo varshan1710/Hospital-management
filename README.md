@@ -1,16 +1,56 @@
-# React + Vite
+# 🏥 Hospital Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web-based hospital management system for handling patient records, appointments, and hospital operations, built with a React front end and a Node.js backend.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Frontend:** React, Vite
+- **Backend:** Node.js
+- **Tooling:** ESLint
 
-## React Compiler
+## Project Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```
+├── App.jsx              # Root React component
+├── App.css              # App-level styles
+├── main.jsx              # React entry point
+├── index.html            # HTML template
+├── server.js              # Node.js backend server
+├── eslint.config.js       # Linting rules
+└── package.json           # Dependencies and scripts
+```
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+- Node.js installed on your machine
+
+### Installation
+
+```bash
+git clone https://github.com/varshan1710/Hospital-management.git
+cd Hospital-management
+npm install
+```
+
+### Run the frontend (development)
+
+```bash
+npm run dev
+```
+
+### Run the backend server
+
+```bash
+node server.js
+```
+
+## Features
+
+- Patient record management
+- Appointment scheduling
+- Hospital operations dashboard
+
+## License
+
+This project is open source and available for learning and reference purposes.
